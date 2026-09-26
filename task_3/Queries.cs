@@ -19,5 +19,10 @@ namespace DepartmentApp.Queries
         {
             return await context.Employees.FirstOrDefaultAsync(e => e.Id == employeeId);
         }
+
+        public static async Task<Employee?> GetEmployeeByIdNoTrackingAsync(AppDbContext context, int employeeId)
+        {
+            return await context.Employees.AsNoTracking().FirstOrDefaultAsync(e => e.Id == employeeId);
+        }
     }
 }

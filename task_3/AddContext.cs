@@ -33,6 +33,7 @@ namespace DepartmentApp.Context
             modelBuilder.Entity<EmployeeResult>(e =>
             {
                 e.HasNoKey()
+                .ToView(null)
                 .Property(x => x.Salary)
                 .HasPrecision(18, 2);
             });
